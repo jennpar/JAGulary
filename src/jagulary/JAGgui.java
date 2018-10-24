@@ -129,7 +129,8 @@ public class JAGgui {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-		    	frame.setContentPane(addComponentsToClassPane());
+		    	//frame.setContentPane(addComponentsToClassPane());
+		    	frame.setContentPane(addComponentsToLogin());
 		    	frame.revalidate();
 		    }
 		});
@@ -140,6 +141,96 @@ public class JAGgui {
 	
 /***************************************************** C L A S S *******************************************/    
     
+   	public static JPanel addComponentsToLogin(){
+		
+		JPanel pane = new JPanel();
+		if (RIGHT_TO_LEFT) 
+        {
+            pane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        }
+        pane.setBackground(new Color(0, 32, 91));
+    	
+    	pane.setLayout(new GridBagLayout());
+    	GridBagConstraints c = new GridBagConstraints();
+		
+    	JButton loginButton;
+    	loginButton = new JButton("Login");
+  		createRedButton(loginButton);
+  		//c.ipady = 30;       //reset to default
+  		c.gridy = 9;       //row 2
+  		c.gridx = 0;
+  		c.weightx = 0.5;
+  		c.weighty = 0.5;
+  		pane.add(loginButton, c);
+  		
+  		loginButton.addActionListener( new ActionListener()
+		{
+		    @Override
+		    public void actionPerformed(ActionEvent e)
+		    {	    	
+		    	
+		    	JAGgui.frame.setContentPane(JAGgui.addComponentsToClassPane());
+		    	JAGgui.frame.revalidate();
+		    	
+		    }
+		});
+  		
+  		JLabel loginLabel = new JLabel("Login");
+    	createLabel(loginLabel);
+		loginLabel.setForeground(Color.WHITE);
+		c.gridx = 0;	
+		c.gridy = 0;
+		c.weightx = 0.5;
+  		c.weighty = 0.5;
+		pane.add(loginLabel, c); 
+		
+  		JLabel usernameLabel = new JLabel("Username:");
+    	createLabel(usernameLabel);
+		usernameLabel.setForeground(Color.WHITE);
+		c.gridx = 1;	
+		c.gridy = 1;
+		c.weightx = 0.5;
+  		c.weighty = 0.5;
+		pane.add(usernameLabel, c); 
+		
+		JTextField usernameTextArea = new JTextField();
+		usernameTextArea.setFont(new Font("SNAP ITC", Font.PLAIN, 25));
+		usernameTextArea.setForeground(new Color(191, 13, 62));
+		usernameTextArea.setBackground(Color.WHITE);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		//c.ipady = 100;
+		//c.ipadx = 100;
+		c.gridx = 1;
+		c.gridy = 2;
+		c.weightx = 0.5;
+  		c.weighty = 0.5;
+		pane.add(usernameTextArea, c);
+		
+  		JLabel passwordLabel = new JLabel("Password:");
+    	createLabel(passwordLabel);
+		passwordLabel.setForeground(Color.WHITE);
+		c.gridx = 1;	
+		c.gridy = 4;
+		c.weightx = 0.5;
+  		c.weighty = 0.5;
+		pane.add(passwordLabel, c); 
+		
+		JTextField passwordTextArea = new JTextField();
+		passwordTextArea.setFont(new Font("SNAP ITC", Font.PLAIN, 25));
+		passwordTextArea.setForeground(new Color(191, 13, 62));
+		passwordTextArea.setBackground(Color.WHITE);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		//c.ipady = 100;
+		//c.ipadx = 100;
+		c.gridx = 1;
+		c.gridy = 5;
+		c.weightx = 0.5;
+  		c.weighty = 0.5;
+		pane.add(passwordTextArea, c);
+    	
+		return pane;
+	}
+   	
     @SuppressWarnings({ "unchecked", "rawtypes" })
   	public static JPanel addComponentsToClassPane() {
     	JPanel pane = new JPanel();
