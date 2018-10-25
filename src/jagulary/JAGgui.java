@@ -129,8 +129,8 @@ public class JAGgui {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-		    	//frame.setContentPane(addComponentsToClassPane());
-		    	frame.setContentPane(addComponentsToLogin());
+		    	frame.setContentPane(addComponentsToClassPane());
+		    	//frame.setContentPane(addComponentsToLogin());
 		    	frame.revalidate();
 		    }
 		});
